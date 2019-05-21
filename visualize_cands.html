@@ -62,8 +62,8 @@
 		return;
 	}
 		
-
-
+    window.location.reload(true); 
+/*
 	var input = document.getElementById("input");
 	input.addEventListener("change", function () {
 		if (this.files && this.files[0]) {
@@ -77,8 +77,20 @@
 		reader.readAsText(myFile);
 		}   
 	});
+*/
+	var fileInput = document.getElementById("csv"),
 
-	
+    readFile = function () {
+        var reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('out').innerHTML = reader.result;
+            coord = $.csv.toArrays(reader.result);
+            draw(coord);
+        };
+        reader.readAsBinaryString(fileInput.files[0]);
+    };
+
+fileInput.addEventListener('change', readFile);
 
 </script>
 </body>
