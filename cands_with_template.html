@@ -39,15 +39,7 @@
 			id: 'mapbox.streets'
 		}).addTo(map);
 		
-		for (var i = 1; i < 55; i++) {
-			var point_coord = coord[i];	
-			new L.circle([point_coord[1], point_coord[0]], {
-					color: "blue",
-					fillOpacity: 1,
-					radius: 30
-				}).addTo(map);
-		
-		}
+
 		
 	///*	
 		for (var i = 55; i < coord.length; i++) {
@@ -60,6 +52,16 @@
 		
 		}
 	//*/
+	
+		for (var i = 1; i < 55; i++) {
+			var point_coord = coord[i];	
+			new L.circle([point_coord[1], point_coord[0]], {
+					color: "blue",
+					fillOpacity: 1,
+					radius: 30
+				}).addTo(map);
+		
+		}
 		return;
 	}
 		
